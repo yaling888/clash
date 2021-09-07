@@ -334,5 +334,8 @@ func match(metadata *C.Metadata) (C.Proxy, C.Rule, error) {
 		}
 	}
 
+	if metadata.NetWork == C.UDP {
+		return proxies["REJECT"], nil, nil
+	}
 	return proxies["DIRECT"], nil, nil
 }
